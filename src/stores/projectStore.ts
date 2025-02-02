@@ -10,8 +10,8 @@ export interface Project {
   id: string;
   name: string;
   description: string;
-  tasks: Task[]; // Added tasks property
-  // يمكنك إضافة المزيد من الخصائص حسب الحاجة
+  tasks: Task[];
+  assignedTo: string;
 }
 
 export interface ProjectState {
@@ -48,7 +48,7 @@ export const useProjectStore = create<ProjectState>((set) => ({
           ? { ...project, tasks: project.tasks.filter((task) => task.id !== taskId) }
           : project
       ),
-    })),
+    })), 
   updateTask: (projectId, updatedTask) =>
     set((state) => ({
       projects: state.projects.map((project) =>

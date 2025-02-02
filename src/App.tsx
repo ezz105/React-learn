@@ -1,11 +1,13 @@
-import Dashboard from "./pages/Dashboard";
+import { ProductList } from './components/ProductList';
 
 const App = () => {
 
+  
+
   return (
-    <>
-      <Dashboard />
-    </>
+    <div className="bg-amber-300 p-2 m-4">
+     <ProductList />
+    </div>
   );
 };
 
